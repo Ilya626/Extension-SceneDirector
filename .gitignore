@@ -1,0 +1,5 @@
+review/
+node_modules/
+*.log
+AGENTS.md
+tests/

@@ -1,0 +1,22 @@
+<div id="scene_director_settings" class="extension_container">
+  <div class="inline-drawer">
+    <div class="inline-drawer-toggle inline-drawer-header"><b>Scene Director · {{version}}</b><div class="inline-drawer-icon fa-solid fa-circle-chevron-down down"></div></div>
+    <div class="inline-drawer-content">
+      <label class="checkbox_label"><input id="sd_enabled" type="checkbox"><span>Два прохода для игровой сцены</span></label>
+      <p>ГП в сцене: позиции персонажей → цельная сцена. Без ГП: черновик → редактор. Все ГП готовятся одним запросом. В историю идёт только итоговый ответ.</p>
+      <label>Первый проход · подключение<select id="sd_firstProfile" class="text_pole"></select></label>
+      <label>Первый проход · модель<input id="sd_firstModel" class="text_pole" type="text" placeholder="Пусто — модель выбранного подключения"></label>
+      <small>Пустое поле использует модель выбранного подключения/ST. Укажите другую модель, только если она поддерживается вашим эндпоинтом.</small>
+      <label>Второй проход · подключение<select id="sd_finalProfile" class="text_pole"></select></label>
+      <label>Второй проход · модель<input id="sd_finalModel" class="text_pole" type="text" placeholder="Пусто — модель выбранного подключения"></label>
+      <small>Оба профиля должны иметь тот же тип Chat Completion API, что открытый чат. Например, два Custom-профиля с вашими эндпоинтами. Пустая модель наследует профиль/ST. Глобальное подключение и настройки WorldMemory не переключаются.</small>
+      <label>Первый проход · лимит выхода API<input id="sd_firstMaxTokens" class="text_pole" type="number" min="0" step="1024"></label>
+      <small>0 — лимит выбранного подключения/ST. Если задаёте вручную, учитывайте reasoning вашей модели. Служебный ответ запрашивается коротким. Параметры reasoning задаются в подключении ST, расширение их не переопределяет.</small>
+      <p>В редакторе World Info отметьте «Главный персонаж». Без отметки — вторичный. Constant и словоформы работают независимо. Совпадение ключей в последнем обмене даёт кандидатов; первый проход отделяет участников от простых упоминаний.</p>
+      <p>Поддерживается Chat Completion, включая Regenerate, swipe и Continue. Для двух RP-вызовов отключите group chat, tools, auto-continue, auto-swipe и n&gt;1. Фоновые запросы памяти считаются отдельно.</p>
+      <div id="sd_route" role="status"></div><div id="sd_calls"></div><div id="sd_models_status"></div>
+      <div id="sd_status" role="status"></div><button id="sd_stop" class="menu_button" type="button">Остановить</button>
+      <details><summary>Инструкции обоих проходов · показать / изменить</summary><div id="sd_prompts"></div></details>
+    </div>
+  </div>
+</div>

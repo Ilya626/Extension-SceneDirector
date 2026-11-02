@@ -1,0 +1,6 @@
+#scene_director_settings label:not(.checkbox_label) { display: flex; flex-direction: column; gap: .3em; margin: .8em 0; }
+#scene_director_settings small { display: block; opacity: .8; line-height: 1.4; }
+#scene_director_settings details { margin: .8em 0; }
+#scene_director_settings textarea { width: 100%; margin: .5em 0; }
+#sd_status, #sd_route, #sd_calls, #sd_models_status { overflow-wrap: anywhere; margin: .35em 0; }
+.scene-director-wi-role { border-top: 1px solid var(--SmartThemeBorderColor); padding-top: .4em; margin-top: .4em; }
